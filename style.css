@@ -1,0 +1,245 @@
+:root {
+  --navy: #071927;
+  --deep-blue: #0b2b3d;
+  --blue: #0f5f7f;
+  --aqua: #4fd1c5;
+  --sand: #f4e7c5;
+  --white: #ffffff;
+  --muted: #c7d7df;
+  --card: #103247;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+header.site-header {
+  background: rgba(7, 25, 39, 0.96);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--aqua);
+}
+
+.hero {
+  min-height: 72vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 90px 20px;
+  background:
+    linear-gradient(rgba(7, 25, 39, 0.68), rgba(7, 25, 39, 0.88)),
+    url("https://images.unsplash.com/photo-1521417531039-94c2f7f7a5f4?auto=format&fit=crop&w=1600&q=80")
+    center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 7vw, 5.6rem);
+  line-height: 1;
+  margin: 0 0 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.hero p {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: #edf7fa;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--aqua);
+  color: #06202d;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.65);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 42px 20px 70px;
+}
+
+.page-title {
+  padding: 56px 20px 28px;
+  background: linear-gradient(135deg, var(--deep-blue), var(--blue));
+  text-align: center;
+}
+
+.page-title h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2.1rem, 5vw, 3.8rem);
+}
+
+.page-title p {
+  margin: 0;
+  color: #e4f1f4;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--aqua);
+}
+
+.section {
+  margin: 44px 0;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, rgba(79,209,197,0.16), rgba(244,231,197,0.1));
+  border: 1px solid rgba(79,209,197,0.28);
+  border-radius: 18px;
+  padding: 26px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  background: var(--card);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+}
+
+th, td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+th {
+  color: var(--aqua);
+  background: rgba(0,0,0,0.16);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(79,209,197,0.16);
+  color: var(--aqua);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.contact {
+  text-align: center;
+}
+
+footer {
+  background: #04111b;
+  color: var(--muted);
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 700px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    gap: 10px 14px;
+  }
+
+  .hero {
+    min-height: 64vh;
+  }
+}
